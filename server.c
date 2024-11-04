@@ -34,12 +34,6 @@ void* handleClient(void* socket) {
 }
 
 // Function to start the server
-/* Setup server to bind the address with port and actively listen for
-connections Handle this client connections and client managing within clients to
-do other task monotonously */
-// The server at best needs to accept one client at all times. (One leaves then
-// another can join) Try to make it handle multiple clients at once
-
 void startServer(int port) {
     int serverSocket;
     int clientSocket;
