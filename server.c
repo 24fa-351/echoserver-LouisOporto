@@ -5,6 +5,18 @@
 #include <sys/socket.h>
 
 // Usage: ./server <port>
+
+// Function to handle client connections
+
+// Function to manage clients
+
+// Functions to receive client packets
+
+// Function to broadcast client messages
+
+// FUnction to start the server
+
+// Main driver function
 int main(int argc, char* argv[]) {
 
   if (argc < 2) {
