@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
+#define MAX_LEN 1024
 // Usage: ./server <port>
 
 // Function to broadcast client messages (return to client)
@@ -16,11 +17,11 @@ void broadcastMessage(char* message, int clientSocket) {
 // Functions to receive client packets
 void* handleClient(void* socket) {
     int clientSocket = *(int*)socket;
-    char message[1024];
+    char message[MAX_LEN];
     int readBytes;
 
     // Receive data from the client
-    while ((readBytes = recv(clientSocket, message, 1024, 0)) > 0) {
+    while ((readBytes = recv(clientSocket, message, MAX_LEN - 1, 0)) > 0) {
         message[readBytes] = '\0';
         printf("Client: %s\n", message);
 
